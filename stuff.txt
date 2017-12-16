@@ -1,0 +1,220 @@
+Name:
+Phone 
+Mobile
+Whatsapp
+Address
+
+<<Statuses>>
+Switched off
+Not repsonding
+OUt of country
+NOt interested
+Willing for demo
+Call me on
+Follow up
+Dont call
+
+
+
+http://beta.eurekaforbes.ae/admin/utilities/setup_menu
+
+http://beta.eurekaforbes.ae/admin/utilities/main_menu
+
+
+CREATE TABLE `tbldirectorycalls` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `directory_id` BIGINT NOT NULL , `date_time` TIMESTAMP NOT NULL , `status` VARCHAR(50) NOT NULL , `notes` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `tbldirectory` ADD `customer_group_id` INT(11) NULL AFTER `address`;
+
+    var sec = 0;
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
+    
+<span id="minutes"></span>:<span id="seconds"></span>
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 08, 2017 at 06:14 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `perfex`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbldirectory`
+--
+
+CREATE TABLE `tbldirectory` (
+  `id` bigint(20) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `mobile` varchar(20) DEFAULT NULL,
+  `whatsapp` varchar(20) DEFAULT NULL,
+  `apartment` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbldirectory`
+--
+
+INSERT INTO `tbldirectory` (`id`, `full_name`, `email`, `mobile`, `whatsapp`, `apartment`, `address`, `timestamp`, `status`) VALUES
+(1, 'Nasir Khan', 'nasir.khan@dummy.com', '00971524621358', '00971451256325', 'Apartment No. 3', 'New street, Google building, IT Road, Dubai', '2017-12-04 16:50:12', 'New'),
+(2, 'Faheem Akhter', 'faheem.akhter@dummy.com', '00971548932541', '00971543692158', 'New apartment', 'Gold street', '2017-12-04 16:52:59', 'New'),
+(3, 'Saleem', 'saleem@google.com', 'as;ldkfjas;dlfkj', 'sdlfkjsdlkfj', 'sldkfjsldfj', 'lkajslsdfjsklef', '2017-12-04 17:01:49', 'New'),
+(6, 'dfghj', 'fdghbnjm', 'dfghnjm', 'xdcvbnm', 'fghjnmk', 'fghj', '2017-12-04 17:04:22', 'New'),
+(8, 'nbvcxz', 'nbvcx', 'nbvcx', 'bvcxz', 'nbvcx', 'nmbvcx', '2017-12-04 17:36:48', 'New'),
+(9, 'uytre', 'iuytre', 'ytred', 'uytrfde', 'uytre', 'uytre', '2017-12-04 17:39:40', 'New');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbldirectory`
+--
+ALTER TABLE `tbldirectory`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbldirectory`
+--
+ALTER TABLE `tbldirectory`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 08, 2017 at 06:17 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `perfex`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbldirectorycalls`
+--
+
+CREATE TABLE `tbldirectorycalls` (
+  `id` bigint(20) NOT NULL,
+  `directory_id` bigint(20) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(50) NOT NULL,
+  `notes` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbldirectorycalls`
+--
+ALTER TABLE `tbldirectorycalls`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbldirectorycalls`
+--
+ALTER TABLE `tbldirectorycalls`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+======Daily Service Sheet Filters =======
+Customer Group Selection (Area)
+Employee Name Selection (Staff Name)
+Date Selection
+
+Fields to be loaded:
+Customer Number (Delayed)
+Customer Name
+Date of Purchase/Date of Contract
+Contract Number
+Address (Customer Address)
+City (Customer City)
+Group (Refused)
+Area (Customer Group)
+Customer Mobile Number
+Home (Alternate number - custom field - belongs to contacts)
+Task Time
+Task Name (Service)
+Amount (Blank)
+Preferred Time ()
+--Remove Email
+
+===========Call Screen==========
+Add filter for Customer Group
+Whatsapp/alternat number instead of Mobile Number
+--Remove Assign Task
+(if status is willing for demo then open new lead form)
+(if status is call me on or follow up then show new field date)
+
+
+===========Add Contact==========
+Add Customer Group in Add Contact Form (completed)
+
+
+===========Setup > Staff screen=========
+--Remove Projects (as projects renamed to installations, may not be needed anymore)
+
+
+
+===========Projects =================
+Rename Projects to Installations (completed)
+
+
+
+==========Item Sale Report ===============
+Filters:                (Working on this)
+From and To Date
+Sale Agent (Dropdown with names and "all")
+Columns:
+Agent Name
+Product Name
+
+
+===========Delivery Note ============
+
+
+===========Task Screen=============
+Add confirmation popup on "mark as complete" (completed)
+
