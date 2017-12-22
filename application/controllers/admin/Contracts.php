@@ -43,7 +43,7 @@ class Contracts extends Admin_controller
                     if(!empty($this->input->post('services')))
                     // $client_admins = $this->clients_model->get($this->input->post['client']);
                     // $client_admin = count($client_admins) > 0 ? $client_admins[0]['id'] : $_SESSION['staff_user_id'];
-                    $diff = $this->split_dates($this->input->post('datestart'), $this->input->post('dateend'), $this->input->post('services')-1);
+                    $diff = $this->split_dates($this->input->post('datestart'), $this->input->post('dateend'), $this->input->post('services')-1, explode("|", get_option('dateformat'))[0]);
                 $counter = 1;
                     foreach ($diff as $tdate) {
                         $tdata = array();
@@ -357,7 +357,7 @@ class Contracts extends Admin_controller
         }
     }
 
-    private function split_dates($min, $max, $parts = 7, $output = "Y-m-d") 
+    private function split_dates($min, $max, $parts = 7, $output = "d-m-Y") 
     {
         $dataCollection = array();
         $dataCollection[] = date($output, strtotime($min));
