@@ -1,0 +1,39 @@
+ 1- Only admin will see the customer list in his portal (No any other person access the bulk list of customer)
+2- Only admin will change the status of customer (Active or Deactivate)
+3- Inactive customer warning color must be in red and bold on every page and remove the Convert to Active link.
+4- Some Changes in Task Status,
+Awaiting change to Postpone
+Testing change to Over Due
+Add new status Not Responding
+5- Some changes in Task
+Show customer name, mobile and address with every task
+6- Except Admin or Manager nobody can make changes in customer record.
+7- Add a Customer Area in task Summary List.
+8- Ticket should not be close until convert in to Task.
+9- Add a new option in Task Window
+NOT CONVERTED TO TASK (Task and Tickets are different objects)
+10- Change the description on login page,
+LOGIN TO STAFF LOGIN
+LOGIN TO CUSTOMER LOGIN
+11- Change the design of main login page as designed by MR NAVEED
+12- Change the Company Name on main login Hydropure Water Technologies TR LLC to Hydropure Water Technologies FZ LLC
+13- Change the copyright 2017 into 2006.
+
+
+Waiting your positive and quick response
+
+
+Thanks and Regards 
+
+
+3,4,6,10,11,12, 13 by tomorrow
+8 have to analyse in detail
+1,2  probably 
+5 partially complete
++one irrelvant fields will be removed
+Work stopped on reporting, because these activites affect outcome reports
+
+25% already paid, thanks
+
+Support department improve, Instant pre-defined replies are added on tickets
+Insert the knowledge base link by tomorrow on naveed request
