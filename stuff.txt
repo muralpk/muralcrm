@@ -15,6 +15,17 @@ Follow up
 Dont call
 
 
+o_phone varchar 20
+o_datetime datetime
+r_date date
+staff_id int
+
+ALTER TABLE `tbldirectory` ADD `o_phone` VARCHAR(20) NULL AFTER `status`, ADD `o_datetime` DATETIME NULL AFTER `o_phone`, ADD `r_date` DATE NULL AFTER `o_datetime`, ADD `staff_id` INT NULL AFTER `r_date`;
+
+ALTER TABLE `tbldirectory` ADD `notes` TEXT NULL AFTER `staff_id`;
+
+ALTER TABLE `tbldirectorycalls` ADD `o_phone` VARCHAR(20) NULL AFTER `status`, ADD `o_datetime` DATETIME NULL AFTER `o_phone`, ADD `r_date` DATE NULL AFTER `o_datetime`, ADD `staff_id` INT NULL AFTER `r_date`;
+
 
 http://beta.eurekaforbes.ae/admin/utilities/setup_menu
 
@@ -218,3 +229,18 @@ Product Name
 ===========Task Screen=============
 Add confirmation popup on "mark as complete" (completed)
 
+
+
+/////////////////////////////
+
+1. task table set admin to null when creating task
+2. task list window: related to customer (name, area (first client group))
+3. task creation form, instead of due date, use date time
+4. hide repeat every field in task form (task.php)(line 167 onwards)
+5. hide hourly rate field in task form (task.php)
+6. update language from naveed
+7. update copyright file from naveed (footer.php)
+8. customer list should be shown only to administrators (later on active fields will be visible to admins only)
+9. "This is inactive customer profile and some features may be disabled
+Mark as active" remove Mark as active will be done by naveed
+10. 

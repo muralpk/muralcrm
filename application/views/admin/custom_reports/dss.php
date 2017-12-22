@@ -125,13 +125,13 @@ foreach ($tasks as $task) { ?>
   <tr class="bottom" height="22px">
     <td><?php echo $counter++; ?></td>
     <td>&nbsp;</td>
-    <td><?php echo date_format(date_create_from_format("Y-m-d",$task['datestart']),"d-m-Y");  ?></td>
-    <td><?php echo $task['company']; ?></td>
+    <td><?php echo date_format(date_create_from_format("Y-m-d",$task['dop']),"d-m-Y");  ?></td>
+    <td><?php echo $task['customer_name']; ?></td>
     <td>&nbsp;</td>
     <td><?php echo $task['address']; ?></td>
     <td><?php echo $task['city']; ?></td>
     <td><?php echo $task['phonenumber']; ?></td>
-    <td><?php echo $task['phonenumber']; ?></td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>

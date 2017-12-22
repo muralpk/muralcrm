@@ -10,7 +10,6 @@ class Custom_reports extends Admin_controller
     $this->load->model('clients_model');
     $this->load->model('az_tasks_model');
     $this->load->model('az_invoices_model');
-    $data['logo'] = $this->config->item('base_url') . 'uploads/company/' . get_option('company_logo');
     if (!is_admin()) {
       access_denied('Directory');
     }
@@ -24,6 +23,7 @@ class Custom_reports extends Admin_controller
 
   public function dss()
   {
+    $data['logo'] = $this->config->item('base_url') . 'uploads/company/' . get_option('company_logo');
     if ($this->input->post()) {
       $data['employee'] = $this->staff_model->get($this->input->post('staffid'));
       $data['date']     = $this->input->post('date');
@@ -46,6 +46,7 @@ class Custom_reports extends Admin_controller
 
   public function item_sale()
   {
+    $data['logo'] = $this->config->item('base_url') . 'uploads/company/' . get_option('company_logo');
     if ($this->input->post()) {
       $invoices = $this->az_invoices_model->get_where(['sale_agent' => $this->input->post('staffid')]);
       foreach ($invoices as $key => $invoice) {
